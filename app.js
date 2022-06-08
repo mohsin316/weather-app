@@ -282,13 +282,15 @@ before.addEventListener('click', ( ) => {
     if (click <= 0){
         before.disabled = true;
     }
-    if(!click===-1){
-        updateCity(city)
-            .then(data => updateUI(data,click))
-            .catch(err => console.log(err));
-    }else{
+    console.log(click)
+    if(click===-1){
         updateCity(city)
             .then(data => updateUI(data,0))
+            .catch(err => console.log(err));
+        
+    }else{
+        updateCity(city)
+            .then(data => updateUI(data,click))
             .catch(err => console.log(err));
     }
 })      
