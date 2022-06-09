@@ -24,12 +24,3 @@ const userAddress = async (lat,  lon) => {
     const data = await response.json()
     return data
 }
-
-getCity('mumbai').then(data => {
-    console.log('city',data)
-    let lat = data.coord.lat
-    let lon = data.coord.lon
-    return getWeather(lat, lon) 
-}).then(data => {
-    console.log('onecall',data)
-})
